@@ -1,8 +1,8 @@
 package parrot;
 
-public class Parrot {
+public abstract class Parrot {
 
-    private final ParrotTypeEnum type;
+    protected final ParrotTypeEnum type;
     protected final int numberOfCoconuts;
     protected final double voltage;
     protected final boolean isNailed;
@@ -17,7 +17,7 @@ public class Parrot {
     public static Parrot createParrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, boolean isNailed) {
         switch(type) {
             case EUROPEAN:
-                return new EuropeanParrot(type, numberOfCoconuts, voltage, isNailed);
+                return new EuropeanParrot(numberOfCoconuts, voltage, isNailed);
             case AFRICAN:
                 return new AfricanParrot(numberOfCoconuts, voltage, isNailed);
             case NORWEGIAN_BLUE:
@@ -46,11 +46,5 @@ public class Parrot {
         return 12.0;
     }
 
-    public String getCry() {
-        return switch (type) {
-            case EUROPEAN -> "Sqoork!";
-            case AFRICAN -> "Sqaark!";
-            case NORWEGIAN_BLUE -> voltage > 0 ? "Bzzzzzz" : "...";
-        };
-    }
+    protected abstract String getCry();
 }
