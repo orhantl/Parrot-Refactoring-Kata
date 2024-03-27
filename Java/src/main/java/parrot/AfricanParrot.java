@@ -4,8 +4,8 @@ public class AfricanParrot extends Parrot {
 
     public static final double LOAD_FACTOR = 9.0;
 
-    public AfricanParrot(int numberOfCoconuts, double voltage) {
-        super(numberOfCoconuts, voltage);
+    public AfricanParrot(int numberOfCoconuts) {
+        super(numberOfCoconuts);
     }
 
     @Override
