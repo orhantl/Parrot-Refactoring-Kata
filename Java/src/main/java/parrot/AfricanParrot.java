@@ -4,12 +4,12 @@ import static parrot.ParrotTypeEnum.AFRICAN;
 
 public class AfricanParrot extends Parrot {
 
-    private AfricanParrot(int numberOfCoconuts, double voltage) {
-        super(AFRICAN, numberOfCoconuts, voltage);
+    private AfricanParrot(int numberOfCoconuts) {
+        super(AFRICAN, numberOfCoconuts);
     }
 
-    public static AfricanParrot createAfricanParrot(int numberOfCoconuts, double voltage) {
-        return new AfricanParrot(numberOfCoconuts, voltage);
+    public static AfricanParrot createAfricanParrot(int numberOfCoconuts) {
+        return new AfricanParrot(numberOfCoconuts);
     }
 
     @Override
