@@ -4,12 +4,12 @@ import static parrot.ParrotTypeEnum.EUROPEAN;
 
 public class EuropeanParrot extends Parrot {
 
-    private EuropeanParrot(int numberOfCoconuts) {
-        super(EUROPEAN, numberOfCoconuts);
+    private EuropeanParrot() {
+        super(EUROPEAN);
     }
 
-    public static EuropeanParrot createEuropeanParrot(int numberOfCoconuts) {
-        return new EuropeanParrot(numberOfCoconuts);
+    public static EuropeanParrot createEuropeanParrot() {
+        return new EuropeanParrot();
     }
 
     @Override

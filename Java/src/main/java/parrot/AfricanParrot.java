@@ -4,8 +4,11 @@ import static parrot.ParrotTypeEnum.AFRICAN;
 
 public class AfricanParrot extends Parrot {
 
+    protected final int numberOfCoconuts;
+
     private AfricanParrot(int numberOfCoconuts) {
-        super(AFRICAN, numberOfCoconuts);
+        super(AFRICAN);
+        this.numberOfCoconuts = numberOfCoconuts;
     }
 
     public static AfricanParrot createAfricanParrot(int numberOfCoconuts) {
