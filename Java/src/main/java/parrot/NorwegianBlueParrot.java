@@ -3,8 +3,11 @@ package parrot;
 import static parrot.ParrotTypeEnum.NORWEGIAN_BLUE;
 
 public class NorwegianBlueParrot extends Parrot {
+    protected final boolean isNailed;
+
     private NorwegianBlueParrot(int numberOfCoconuts, double voltage, boolean isNailed) {
-        super(NORWEGIAN_BLUE, numberOfCoconuts, voltage, isNailed);
+        super(NORWEGIAN_BLUE, numberOfCoconuts, voltage);
+        this.isNailed = isNailed;
     }
 
     public static NorwegianBlueParrot createNorwegianBlueParrot(int numberOfCoconuts, double voltage, boolean isNailed) {

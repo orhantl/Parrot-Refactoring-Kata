@@ -7,19 +7,17 @@ public abstract class Parrot {
     protected final ParrotTypeEnum type;
     protected final int numberOfCoconuts;
     protected final double voltage;
-    protected final boolean isNailed;
 
-    protected Parrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, boolean isNailed) {
+    protected Parrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage) {
         this.type = type;
         this.numberOfCoconuts = numberOfCoconuts;
         this.voltage = voltage;
-        this.isNailed = isNailed;
     }
 
     public static Parrot createParrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, boolean isNailed) {
         return switch (type) {
-            case EUROPEAN -> EuropeanParrot.createEuropeanParrot(numberOfCoconuts, voltage, isNailed);
-            case AFRICAN -> AfricanParrot.createAfricanParrot(numberOfCoconuts, voltage, isNailed);
+            case EUROPEAN -> EuropeanParrot.createEuropeanParrot(numberOfCoconuts, voltage);
+            case AFRICAN -> AfricanParrot.createAfricanParrot(numberOfCoconuts, voltage);
             case NORWEGIAN_BLUE -> NorwegianBlueParrot.createNorwegianBlueParrot(numberOfCoconuts, voltage, isNailed);
         };
     }

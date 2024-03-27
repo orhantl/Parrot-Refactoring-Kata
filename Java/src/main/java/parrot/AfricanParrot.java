@@ -3,12 +3,13 @@ package parrot;
 import static parrot.ParrotTypeEnum.AFRICAN;
 
 public class AfricanParrot extends Parrot {
-    private AfricanParrot(int numberOfCoconuts, double voltage, boolean isNailed) {
-        super(AFRICAN, numberOfCoconuts, voltage, isNailed);
+
+    private AfricanParrot(int numberOfCoconuts, double voltage) {
+        super(AFRICAN, numberOfCoconuts, voltage);
     }
 
-    public static AfricanParrot createAfricanParrot(int numberOfCoconuts, double voltage, boolean isNailed) {
-        return new AfricanParrot(numberOfCoconuts, voltage, isNailed);
+    public static AfricanParrot createAfricanParrot(int numberOfCoconuts, double voltage) {
+        return new AfricanParrot(numberOfCoconuts, voltage);
     }
 
     @Override
