@@ -1,11 +1,9 @@
 package parrot;
 
-import static parrot.ParrotTypeEnum.EUROPEAN;
-
 public class EuropeanParrot extends Parrot {
 
     private EuropeanParrot() {
-        super(EUROPEAN);
+        super();
     }
 
     public static EuropeanParrot createEuropeanParrot() {

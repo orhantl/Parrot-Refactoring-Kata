@@ -2,12 +2,9 @@ package parrot;
 
 public abstract class Parrot {
 
-    public static final double LOAD_FACTOR = 9.0;
-    public static final double BASE_SPEED = 12.0;
-    protected final ParrotTypeEnum type;
+    protected static final double BASE_SPEED = 12.0;
 
-    protected Parrot(ParrotTypeEnum type) {
-        this.type = type;
+    protected Parrot() {
     }
 
     public static Parrot createParrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, boolean isNailed) {

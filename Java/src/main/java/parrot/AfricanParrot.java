@@ -1,13 +1,12 @@
 package parrot;
 
-import static parrot.ParrotTypeEnum.AFRICAN;
-
 public class AfricanParrot extends Parrot {
 
-    protected final int numberOfCoconuts;
+    private static final double LOAD_FACTOR = 9.0;
+    private final int numberOfCoconuts;
 
     private AfricanParrot(int numberOfCoconuts) {
-        super(AFRICAN);
+        super();
         this.numberOfCoconuts = numberOfCoconuts;
     }
 
