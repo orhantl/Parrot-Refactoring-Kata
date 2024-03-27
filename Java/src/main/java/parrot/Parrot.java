@@ -1,6 +1,6 @@
 package parrot;
 
-public class Parrot {
+public abstract class Parrot {
 
     public static final double LOAD_FACTOR = 9.0;
     public static final double BASE_SPEED = 12.0;
@@ -25,6 +25,8 @@ public class Parrot {
         };
     }
 
+    public abstract String getCry();
+
     public double getSpeed() {
         return switch (type) {
             case EUROPEAN -> BASE_SPEED;
@@ -37,11 +39,4 @@ public class Parrot {
         return Math.min(24.0, voltage * BASE_SPEED);
     }
 
-    public String getCry() {
-        return switch (type) {
-            case EUROPEAN -> "Sqoork!";
-            case AFRICAN -> "Sqaark!";
-            case NORWEGIAN_BLUE -> voltage > 0 ? "Bzzzzzz" : "...";
-        };
-    }
 }
