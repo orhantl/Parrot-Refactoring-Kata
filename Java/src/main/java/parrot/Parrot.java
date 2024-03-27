@@ -15,7 +15,7 @@ public abstract class Parrot {
         };
     }
 
-    public abstract double getSpeed();
+    protected abstract double getSpeed();
 
     protected abstract String getCry();
 }
