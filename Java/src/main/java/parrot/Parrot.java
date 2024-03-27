@@ -6,9 +6,9 @@ public class Parrot {
     public static final double BASE_SPEED = 12.0;
 
     private final ParrotTypeEnum type;
-    private final int numberOfCoconuts;
-    private final double voltage;
-    private final boolean isNailed;
+    protected final int numberOfCoconuts;
+    protected final double voltage;
+    protected final boolean isNailed;
 
     protected Parrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, boolean isNailed) {
         this.type = type;
