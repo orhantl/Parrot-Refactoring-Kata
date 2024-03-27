@@ -2,6 +2,8 @@ package parrot;
 
 public abstract class Parrot {
 
+    public static final double LOAD_FACTOR = 9.0;
+    public static final double BASE_SPEED = 12.0;
     protected final ParrotTypeEnum type;
     protected final int numberOfCoconuts;
     protected final double voltage;
@@ -15,36 +17,14 @@ public abstract class Parrot {
     }
 
     public static Parrot createParrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, boolean isNailed) {
-        switch(type) {
-            case EUROPEAN:
-                return new EuropeanParrot(numberOfCoconuts, voltage, isNailed);
-            case AFRICAN:
-                return new AfricanParrot(numberOfCoconuts, voltage, isNailed);
-            case NORWEGIAN_BLUE:
-                return new NorwegianBlueParrot(numberOfCoconuts, voltage, isNailed);
-            default: throw new IllegalArgumentException("Unknown Parrot type");
-        }
-    }
-
-    public double getSpeed() {
         return switch (type) {
-            case EUROPEAN -> getBaseSpeed();
-            case AFRICAN -> Math.max(0, getBaseSpeed() - getLoadFactor() * numberOfCoconuts);
-            case NORWEGIAN_BLUE -> (isNailed) ? 0 : getBaseSpeed(voltage);
+            case EUROPEAN -> EuropeanParrot.createEuropeanParrot(numberOfCoconuts, voltage, isNailed);
+            case AFRICAN -> AfricanParrot.createAfricanParrot(numberOfCoconuts, voltage, isNailed);
+            case NORWEGIAN_BLUE -> NorwegianBlueParrot.createNorwegianBlueParrot(numberOfCoconuts, voltage, isNailed);
         };
     }
 
-    private double getBaseSpeed(double voltage) {
-        return Math.min(24.0, voltage * getBaseSpeed());
-    }
-
-    private double getLoadFactor() {
-        return 9.0;
-    }
-
-    private double getBaseSpeed() {
-        return 12.0;
-    }
+    public abstract double getSpeed();
 
     protected abstract String getCry();
 }
